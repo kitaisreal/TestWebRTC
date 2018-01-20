@@ -29,6 +29,7 @@
 #import "ARDSignalingMessage.h"
 #import "RTCVideoTrack.h"
 #import "ARDMessageReceiver.h"
+#import <libjingle_peerconnection/RTCDataChannel.h>
 
 typedef NS_ENUM(NSInteger, ARDAppClientState) {
   // Disconnected from servers.
@@ -92,7 +93,7 @@ typedef NS_ENUM(NSInteger, ARDAppClientState) {
 // Swap camera functionality
 - (void)swapCameraToFront;
 - (void)swapCameraToBack;
-
+- (void)sendDataToDataChannel:(RTCDataBuffer *)dataBufferMessage toChannelWithLabel:(NSString *)label;
 // Disconnects from the AppRTC servers and any connected clients.
 - (void)disconnect;
 

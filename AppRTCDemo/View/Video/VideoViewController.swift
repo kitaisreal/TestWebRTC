@@ -37,6 +37,12 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
         appClient?.send(linesMessage)
     }
     
+    @IBAction func sendDataToChannel(_ sender: UIButton){
+        let testStringData = String("TestStringData").data(using: .utf8)
+        let rtcDataBuffer = RTCDataBuffer(data: testStringData, isBinary: false)
+        appClient?.sendData(toDataChannel: rtcDataBuffer, toChannelWithLabel: "messages")
+    }
+    
     @IBAction func startVideoTranslation(_ sender: UIButton) {
         print("START VIDEO TRANSLATION")
 //        appClient?.unmuteAudioIn()

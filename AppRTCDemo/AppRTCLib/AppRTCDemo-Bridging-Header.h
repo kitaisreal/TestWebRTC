@@ -7,4 +7,4 @@
 #import "RTCPeerConnectionFactory.h"
 #import "ARDSignalingMessage.h"
 #import "ARDWebSocketChannel.h"
-
+#import <libjingle_peerconnection/RTCDataChannel.h>

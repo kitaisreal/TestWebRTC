@@ -9,6 +9,6 @@
 import Foundation
 
 struct DrawConstants {
-    static let MESSAGE_TIMER_FIRING_TIME = 1.5
+    static let MESSAGE_TIMER_FIRING_TIME = 0.5
     static let LINE_WIDTH = 5.0
 }

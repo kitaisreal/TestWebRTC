@@ -28,6 +28,9 @@ class ViewController: UIViewController,ARDAppClientDelegate,RTCEAGLVideoViewDele
         print(appClient?.state)
         remoteView.delegate = self
         localView.delegate = self
+        let testStringData = String("TestStringData").data(using: .utf8)
+        let test:RTCDataBuffer = RTCDataBuffer(data: testStringData, isBinary: false)
+        
     }
     
     @IBAction func addVideoStream(_ sender: UIButton) {

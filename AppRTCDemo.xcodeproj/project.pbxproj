@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31E9499DFA415FEFD8DBCCCE /* Pods_AppRTCDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773D2014F14584A2496AE40D /* Pods_AppRTCDemoUITests.framework */; };
+		480403252013586900A50C61 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480403242013586900A50C61 /* DrawView.swift */; };
 		4816E720201217190096DFEF /* AbstractDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E71F201217190096DFEF /* AbstractDrawViewController.swift */; };
 		4816E723201217F80096DFEF /* DrawDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E722201217F80096DFEF /* DrawDelegate.swift */; };
 		4816E726201219FF0096DFEF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E725201219FF0096DFEF /* VideoViewController.swift */; };
@@ -58,6 +59,7 @@
 		00C6D005D261B302F4783755 /* Pods-AppRTCDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoTests/Pods-AppRTCDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		14441BFD506D17633BA9AE4A /* Pods-AppRTCDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoUITests/Pods-AppRTCDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		34B3FE40AE60837C87F68871 /* Pods-AppRTCDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoUITests/Pods-AppRTCDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		480403242013586900A50C61 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		4816E71F201217190096DFEF /* AbstractDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDrawViewController.swift; sourceTree = "<group>"; };
 		4816E722201217F80096DFEF /* DrawDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDelegate.swift; sourceTree = "<group>"; };
 		4816E725201219FF0096DFEF /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				4816E71F201217190096DFEF /* AbstractDrawViewController.swift */,
 				4816E722201217F80096DFEF /* DrawDelegate.swift */,
+				480403242013586900A50C61 /* DrawView.swift */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 			files = (
 				4816E723201217F80096DFEF /* DrawDelegate.swift in Sources */,
 				4884304B200F737300EBA819 /* ViewController.swift in Sources */,
+				480403252013586900A50C61 /* DrawView.swift in Sources */,
 				48843289200FB71D00EBA819 /* ARDMessageResponse.m in Sources */,
 				4884328D200FB71D00EBA819 /* ARDSignalingMessage.m in Sources */,
 				48843290200FB71D00EBA819 /* RTCICECandidate+JSON.m in Sources */,
