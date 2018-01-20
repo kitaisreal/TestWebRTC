@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DrawView:UIView {
+class DrawView:UIImageView {
     
     var lines:[Line] = []
     var drawBool = false
@@ -34,8 +34,7 @@ class DrawView:UIView {
         let width = self.frame.width
         let height = self.frame.height
         UIGraphicsBeginImageContext(size)
-//        UIGraphicsGetCurrentContext()
-        self.draw(CGRect(x: 0, y: 0, width: width, height: height))
+        self.image?.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
         let context = UIGraphicsGetCurrentContext()
         let startPoint = line.startPoint
         let endPoint = line.endPoint
@@ -48,6 +47,7 @@ class DrawView:UIView {
         context?.setLineWidth(CGFloat(DrawConstants.LINE_WIDTH))
         context?.setStrokeColor(UIColor.green.cgColor)
         context?.strokePath()
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
     

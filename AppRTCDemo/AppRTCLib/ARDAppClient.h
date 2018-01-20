@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, ARDAppClientState) {
   // Connected to servers.
   kARDAppClientStateConnected,
 };
+static NSString *kDrawingDataLabel = @"drawing";
 
 @class ARDAppClient;
 @protocol ARDAppClientDelegate <NSObject>

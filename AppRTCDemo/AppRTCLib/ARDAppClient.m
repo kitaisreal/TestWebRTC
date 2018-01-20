@@ -439,12 +439,7 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
   [_peerConnection addStream:localStream];
 //    [self muteAudioIn];
 //    [self muteVideoIn];
-    RTCDataChannelInit* dataChannelInit = [[RTCDataChannelInit alloc] init];
-    dataChannelInit.streamId = 1;
-    RTCDataChannel* dataChannel =  [_peerConnection createDataChannelWithLabel:@"messages" config:dataChannelInit];
-    dataChannel.delegate = self;
-    [_dataChannels addObject:dataChannel];
-    
+    [self createDataChannel:kDrawingDataLabel];
   if (_isInitiator) {
     [self sendOffer];
   } else {
@@ -894,6 +889,15 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
     _isSpeakerEnabled = NO;
 }
 //MY CHANGES
+#pragma mark - dataChannelMethords
+- (void)createDataChannel:(NSString*)label {
+    RTCDataChannelInit* dataChannelInit = [[RTCDataChannelInit alloc] init];
+    dataChannelInit.streamId = 1;
+    RTCDataChannel* dataChannel =  [_peerConnection createDataChannelWithLabel:label config:dataChannelInit];
+    dataChannel.delegate = self;
+    [_dataChannels addObject:dataChannel];
+}
+
 #pragma mark - dataChannelHandle
 - (void)peerConnection:(RTCPeerConnection*)peerConnection
     didOpenDataChannel:(RTCDataChannel*)dataChannel {
@@ -902,42 +906,14 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
 
 #pragma mark - dataChannelDelegate
 - (void)channel:(RTCDataChannel *)channel didReceiveMessageWithBuffer:(RTCDataBuffer *)buffer {
-    //SEND TO MESSAGE RECEIVERS WITH ID
-    NSLog(@"SEND DATA CHANNEL WITH LABEL RECEIVE MESSAGE CHANNEL LABEL%@", channel.label);
-    NSString* string = [[NSString alloc] initWithData:buffer.data encoding:NSUTF8StringEncoding];
-    NSLog(@"PRIN DATA %@", string);
-    if ([channel.label  isEqual: @"messages"] ) {
-        
-    }
-    if ([channel.label  isEqual: @"drawing"]) {
-        
-    }
-    if ([channel.label  isEqual: @"images"]) {
-        
-    }
-    if ([channel.label  isEqual: @"files"]) {
-        
+    if ([channel.label  isEqual: kDrawingDataLabel] ) {
+        [self.dataMessageReceiver didReceiveDataMessage:buffer];
     }
 }
 
 - (void)channelDidChangeState:(RTCDataChannel *)channel {
     NSLog(@"SEND DATA CHANNEL WITH LABEL STATE CHANGE %@", channel.label);
     NSLog(@"SEND DATA CHANNEL STATE %u", channel.state);
-    switch (channel.state) {
-            
-        case kRTCDataChannelStateConnecting:
-            NSLog(@"SEND DATA CHANNEL STATE CONNECTING");
-            break;
-        case kRTCDataChannelStateOpen:
-            NSLog(@"DATA CHANNEL STATE OPEN");
-            break;
-        case kRTCDataChannelStateClosing:
-            NSLog(@"DATA CHANNEL STATE CLOSING");
-            break;
-        case kRTCDataChannelStateClosed:
-            NSLog(@"DATA CHANNEL STATE CLOSED");
-            break;
-    }
 }
 
 @end

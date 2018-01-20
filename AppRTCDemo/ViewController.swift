@@ -9,6 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController,ARDAppClientDelegate,RTCEAGLVideoViewDelegate,UITextFieldDelegate,ARDDataMessageReceiverDelegate {
+    func didReceiveDataMessage(_ buffer: RTCDataBuffer!) {
+        print("DID RECEIVE MESSAGE")
+        if (buffer.isBinary == false) {
+            let string = String(data:buffer.data, encoding:.utf8)
+            print(string)
+        }
+    }
     
     let testMessage:ARDDataMessage = ARDDataMessage(typeAndData: "image", data: ["message":"testDataMessage"])
     var appClient:ARDAppClient?

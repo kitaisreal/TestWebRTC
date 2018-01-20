@@ -9,7 +9,16 @@
 import UIKit
 
 class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMessageDelegate {
-
+    func didReceiveDataMessage(_ buffer: RTCDataBuffer!) {
+        print("DID RECEIVE MESSAGE")
+        if (buffer.isBinary == false) {
+            guard let string = String(data:buffer.data, encoding:.utf8) else {
+                return
+            }
+            print(string)
+        }
+    }
+    
     var appClient:ARDAppClient?
     
     @IBOutlet weak var textField: UITextField!
@@ -40,7 +49,8 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
     @IBAction func sendDataToChannel(_ sender: UIButton){
         let testStringData = String("TestStringData").data(using: .utf8)
         let rtcDataBuffer = RTCDataBuffer(data: testStringData, isBinary: false)
-        appClient?.sendData(toDataChannel: rtcDataBuffer, toChannelWithLabel: "messages")
+        print(kDrawingDataLabel)
+        appClient?.sendData(toDataChannel: rtcDataBuffer, toChannelWithLabel:kDrawingDataLabel )
     }
     
     @IBAction func startVideoTranslation(_ sender: UIButton) {
