@@ -133,7 +133,21 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
 //                                                   name:@"UIDeviceOrientationDidChangeNotification"
 //                                                 object:nil];
   }
+    
   return self;
+}
+
+- (instancetype) init {
+    if (self = [super init]) {
+        _factory = [[RTCPeerConnectionFactory alloc] init];
+        _messageQueue = [NSMutableArray array];
+        _iceServers = [NSMutableArray arrayWithObject:[self defaultSTUNServer]];
+        _serverHostUrl = kARDRoomServerHostUrl;
+        _isSpeakerEnabled = YES;
+        _mediaStreamOn = NO;
+        _dataChannels = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 - (void)dealloc {
@@ -813,7 +827,7 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
 
 #pragma mark - Video mute/unmute
 - (void)muteVideoIn {
-    NSLog(@"video muted");
+    NSLog(@"video muted %lu", (unsigned long)_peerConnection.localStreams.count);
     RTCMediaStream *localStream = _peerConnection.localStreams[0];
     self.defaultVideoTrack = localStream.videoTracks[0];
     [localStream removeVideoTrack:localStream.videoTracks[0]];
@@ -889,6 +903,9 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
     _isSpeakerEnabled = NO;
 }
 //MY CHANGES
+-(bool) isInitiator {
+    return _isInitiator;
+}
 #pragma mark - dataChannelMethords
 - (void)createDataChannel:(NSString*)label {
     RTCDataChannelInit* dataChannelInit = [[RTCDataChannelInit alloc] init];

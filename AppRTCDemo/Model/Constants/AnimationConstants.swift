@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct AnimationConstants {
+    static let annotationsHeightOffset:CGFloat = 8
+    static let annotationsHeight:CGFloat = 64
+}

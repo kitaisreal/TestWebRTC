@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		31E9499DFA415FEFD8DBCCCE /* Pods_AppRTCDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773D2014F14584A2496AE40D /* Pods_AppRTCDemoUITests.framework */; };
 		480403252013586900A50C61 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480403242013586900A50C61 /* DrawView.swift */; };
+		4815A0E42015FD560095C9EF /* RoomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815A0E32015FD560095C9EF /* RoomNavigationViewController.swift */; };
 		4816E720201217190096DFEF /* AbstractDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E71F201217190096DFEF /* AbstractDrawViewController.swift */; };
 		4816E723201217F80096DFEF /* DrawDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E722201217F80096DFEF /* DrawDelegate.swift */; };
 		4816E726201219FF0096DFEF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E725201219FF0096DFEF /* VideoViewController.swift */; };
 		4816E72B201222C20096DFEF /* DrawConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816E72A201222C20096DFEF /* DrawConstants.swift */; };
+		481AF13A2015F04F0091273B /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AF1392015F04F0091273B /* VideoCallViewController.swift */; };
+		481AF1462015F6BE0091273B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481AF1452015F47D0091273B /* Assets.xcassets */; };
+		481AF1482015F7270091273B /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AF1472015F7270091273B /* DesignViewController.swift */; };
 		4823143D201104F10052292C /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823143C201104F10052292C /* DrawViewController.swift */; };
 		48231440201109B90052292C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4823143F201109B90052292C /* Line.swift */; };
 		486097F82011D9B10081700F /* AppClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486097F72011D9B10081700F /* AppClientConstants.swift */; };
@@ -20,7 +24,6 @@
 		48843049200F737300EBA819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48843048200F737300EBA819 /* AppDelegate.swift */; };
 		4884304B200F737300EBA819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884304A200F737300EBA819 /* ViewController.swift */; };
 		4884304E200F737300EBA819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4884304C200F737300EBA819 /* Main.storyboard */; };
-		48843050200F737300EBA819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4884304F200F737300EBA819 /* Assets.xcassets */; };
 		48843053200F737300EBA819 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48843051200F737300EBA819 /* LaunchScreen.storyboard */; };
 		4884305E200F737300EBA819 /* AppRTCDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4884305D200F737300EBA819 /* AppRTCDemoTests.swift */; };
 		48843069200F737300EBA819 /* AppRTCDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48843068200F737300EBA819 /* AppRTCDemoUITests.swift */; };
@@ -34,6 +37,9 @@
 		48843290200FB71D00EBA819 /* RTCICECandidate+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843285200FB71C00EBA819 /* RTCICECandidate+JSON.m */; };
 		48843291200FB71D00EBA819 /* ARDAppClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843287200FB71C00EBA819 /* ARDAppClient.m */; };
 		48843292200FB71D00EBA819 /* ARDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843288200FB71D00EBA819 /* ARDUtilities.m */; };
+		489BCB2F2015CDA000933E44 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB2E2015CDA000933E44 /* VideoViewModel.swift */; };
+		489BCB312015CDAD00933E44 /* ViewModelActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB302015CDAD00933E44 /* ViewModelActions.swift */; };
+		48EBEE1E2016589400F36C3E /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EBEE1D2016589400F36C3E /* AnimationConstants.swift */; };
 		58037FD8A0AE09C45EA171B9 /* Pods_AppRTCDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA89ABA368AA6DC9924800 /* Pods_AppRTCDemoTests.framework */; };
 		947D3A0AFBCD513410DFC40F /* Pods_AppRTCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4FC53AC8479F039D7F36E8 /* Pods_AppRTCDemo.framework */; };
 /* End PBXBuildFile section */
@@ -60,10 +66,14 @@
 		14441BFD506D17633BA9AE4A /* Pods-AppRTCDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoUITests/Pods-AppRTCDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		34B3FE40AE60837C87F68871 /* Pods-AppRTCDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoUITests/Pods-AppRTCDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		480403242013586900A50C61 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		4815A0E32015FD560095C9EF /* RoomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNavigationViewController.swift; sourceTree = "<group>"; };
 		4816E71F201217190096DFEF /* AbstractDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDrawViewController.swift; sourceTree = "<group>"; };
 		4816E722201217F80096DFEF /* DrawDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDelegate.swift; sourceTree = "<group>"; };
 		4816E725201219FF0096DFEF /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4816E72A201222C20096DFEF /* DrawConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawConstants.swift; sourceTree = "<group>"; };
+		481AF1392015F04F0091273B /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		481AF1452015F47D0091273B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Fluke/Fluke/Assets.xcassets; sourceTree = "<group>"; };
+		481AF1472015F7270091273B /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
 		482313FD2010E3A00052292C /* ARDMessageReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARDMessageReceiver.h; sourceTree = "<group>"; };
 		4823143C201104F10052292C /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		4823143F201109B90052292C /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -73,7 +83,6 @@
 		48843048200F737300EBA819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4884304A200F737300EBA819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4884304D200F737300EBA819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4884304F200F737300EBA819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48843052200F737300EBA819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48843054200F737300EBA819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48843059200F737300EBA819 /* AppRTCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppRTCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +112,9 @@
 		48843286200FB71C00EBA819 /* ARDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDUtilities.h; sourceTree = "<group>"; };
 		48843287200FB71C00EBA819 /* ARDAppClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDAppClient.m; sourceTree = "<group>"; };
 		48843288200FB71D00EBA819 /* ARDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDUtilities.m; sourceTree = "<group>"; };
+		489BCB2E2015CDA000933E44 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		489BCB302015CDAD00933E44 /* ViewModelActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelActions.swift; sourceTree = "<group>"; };
+		48EBEE1D2016589400F36C3E /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		773D2014F14584A2496AE40D /* Pods_AppRTCDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppRTCDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D34F3CC836355E144EFFB5E /* Pods-AppRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemo/Pods-AppRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B9232B2E0D4E2C4F4A1ED24C /* Pods-AppRTCDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemoTests/Pods-AppRTCDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4815A0E22015FD450095C9EF /* RoomNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				4815A0E32015FD560095C9EF /* RoomNavigationViewController.swift */,
+			);
+			path = RoomNavigation;
+			sourceTree = "<group>";
+		};
 		4816E721201217E60096DFEF /* Draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +177,14 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		481AF1382015F0400091273B /* NewVideo */ = {
+			isa = PBXGroup;
+			children = (
+				481AF1392015F04F0091273B /* VideoCallViewController.swift */,
+			);
+			path = NewVideo;
+			sourceTree = "<group>";
+		};
 		4823143E201109AB0052292C /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +198,7 @@
 			children = (
 				486097F72011D9B10081700F /* AppClientConstants.swift */,
 				4816E72A201222C20096DFEF /* DrawConstants.swift */,
+				48EBEE1D2016589400F36C3E /* AnimationConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -207,6 +236,7 @@
 		48843047200F737300EBA819 /* AppRTCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				489BCB2D2015CD9000933E44 /* ViewModel */,
 				487637F22011FF5600FDFA17 /* Utils */,
 				48843293200FB82200EBA819 /* View */,
 				48843294200FB82500EBA819 /* Model */,
@@ -214,9 +244,10 @@
 				48843048200F737300EBA819 /* AppDelegate.swift */,
 				4884304A200F737300EBA819 /* ViewController.swift */,
 				4884304C200F737300EBA819 /* Main.storyboard */,
-				4884304F200F737300EBA819 /* Assets.xcassets */,
 				48843051200F737300EBA819 /* LaunchScreen.storyboard */,
+				481AF1452015F47D0091273B /* Assets.xcassets */,
 				48843054200F737300EBA819 /* Info.plist */,
+				481AF1472015F7270091273B /* DesignViewController.swift */,
 			);
 			path = AppRTCDemo;
 			sourceTree = "<group>";
@@ -271,6 +302,8 @@
 		48843293200FB82200EBA819 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4815A0E22015FD450095C9EF /* RoomNavigation */,
+				481AF1382015F0400091273B /* NewVideo */,
 				4816E724201219EA0096DFEF /* Video */,
 				4816E721201217E60096DFEF /* Draw */,
 				4823143C201104F10052292C /* DrawViewController.swift */,
@@ -285,6 +318,15 @@
 				4823143E201109AB0052292C /* Drawing */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		489BCB2D2015CD9000933E44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				489BCB2E2015CDA000933E44 /* VideoViewModel.swift */,
+				489BCB302015CDAD00933E44 /* ViewModelActions.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		567E05578CA980B316C0729E /* Pods */ = {
@@ -428,7 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48843053200F737300EBA819 /* LaunchScreen.storyboard in Resources */,
-				48843050200F737300EBA819 /* Assets.xcassets in Resources */,
+				481AF1462015F6BE0091273B /* Assets.xcassets in Resources */,
 				4884304E200F737300EBA819 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,10 +577,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppRTCDemo/Pods-AppRTCDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,8 +654,10 @@
 			files = (
 				4816E723201217F80096DFEF /* DrawDelegate.swift in Sources */,
 				4884304B200F737300EBA819 /* ViewController.swift in Sources */,
+				481AF13A2015F04F0091273B /* VideoCallViewController.swift in Sources */,
 				480403252013586900A50C61 /* DrawView.swift in Sources */,
 				48843289200FB71D00EBA819 /* ARDMessageResponse.m in Sources */,
+				489BCB312015CDAD00933E44 /* ViewModelActions.swift in Sources */,
 				4884328D200FB71D00EBA819 /* ARDSignalingMessage.m in Sources */,
 				48843290200FB71D00EBA819 /* RTCICECandidate+JSON.m in Sources */,
 				4823143D201104F10052292C /* DrawViewController.swift in Sources */,
@@ -620,7 +670,11 @@
 				4884328B200FB71D00EBA819 /* RTCMediaConstraints+JSON.m in Sources */,
 				4884328C200FB71D00EBA819 /* RTCSessionDescription+JSON.m in Sources */,
 				48843049200F737300EBA819 /* AppDelegate.swift in Sources */,
+				48EBEE1E2016589400F36C3E /* AnimationConstants.swift in Sources */,
+				481AF1482015F7270091273B /* DesignViewController.swift in Sources */,
+				489BCB2F2015CDA000933E44 /* VideoViewModel.swift in Sources */,
 				4816E72B201222C20096DFEF /* DrawConstants.swift in Sources */,
+				4815A0E42015FD560095C9EF /* RoomNavigationViewController.swift in Sources */,
 				4816E720201217190096DFEF /* AbstractDrawViewController.swift in Sources */,
 				4884328F200FB71D00EBA819 /* RTCICEServer+JSON.m in Sources */,
 				4816E726201219FF0096DFEF /* VideoViewController.swift in Sources */,
@@ -798,7 +852,7 @@
 				DEVELOPMENT_TEAM = FTX976S7G9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AppRTCDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTCDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -819,7 +873,7 @@
 				DEVELOPMENT_TEAM = FTX976S7G9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AppRTCDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTCDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

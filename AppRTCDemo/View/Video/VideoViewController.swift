@@ -30,9 +30,10 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appClient = ARDAppClient(delegate: self)
+        appClient = ARDAppClient()
         appClient?.dataMessageReceiver = self
         appClient?.serverHostUrl = AppClientConstants.HOST_URL
+        appClient?.delegate = self
         self.delegate = self
         self.textField.delegate = self
         self.imageView = drawingImage
@@ -102,6 +103,7 @@ extension VideoViewController:ARDAppClientDelegate {
         case .connecting:
             print("APP CLIENT STATE CONNECTING")
         case .connected:
+            print("APP CLIENT INITIATOR \(appClient?.isInitiator())")
             print("APP CLIENT STATE CONNECTED")
         }
     }

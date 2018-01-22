@@ -40,7 +40,6 @@ static NSString const *kARDMessageResultKey = @"result";
 @implementation ARDMessageResponse
 
 @synthesize result = _result;
-
 + (ARDMessageResponse *)responseFromJSONData:(NSData *)data {
   NSDictionary *responseJSON = [NSDictionary dictionaryWithJSONData:data];
   if (!responseJSON) {

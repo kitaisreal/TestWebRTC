@@ -7,7 +7,7 @@
 //
 #import <libjingle_peerconnection/RTCDataChannel.h>
 
-@protocol ARDDataMessageReceiverDelegate <NSObject>
+@protocol ARDDataMessageReceiverDelegate 
 
 - (void)didReceiverMessage:(ARDSignalingMessage *)message;
 - (void)didReceiveDataMessage:(RTCDataBuffer *)buffer;

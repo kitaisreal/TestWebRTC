@@ -8,17 +8,20 @@
 
 import Foundation
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
 
 class DrawView:UIImageView {
     
     var lines:[Line] = []
-    var drawBool = false
+    var drawBool:MutableProperty<Bool>?
     var drawColor:UIColor = UIColor.black
     private var lastPoint = CGPoint.zero
     private var swipped = false
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("DRAW VIEW TOUCHES BEGGAN")
         swipped = false
         if let touch = touches.first {
             lastPoint = touch.location(in: self)
@@ -29,6 +32,7 @@ class DrawView:UIImageView {
             self.drawLine(line: line, save: true)
         }
     }
+    
     func drawLine(line:Line, save:Bool) {
         let size = self.frame.size
         let width = self.frame.width
@@ -52,6 +56,9 @@ class DrawView:UIImageView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard drawBool?.value == true else {
+            return
+        }
         swipped = true
         if let touch = touches.first {
             let currentPoint = touch.location(in: self)
