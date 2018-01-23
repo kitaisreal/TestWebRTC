@@ -13,7 +13,6 @@ import ReactiveSwift
 
 class DrawView:UIImageView {
     
-    var lines:[Line] = []
     var paths:[Path] = []
     private var oldPaths:[Path] = []
     
@@ -53,7 +52,7 @@ class DrawView:UIImageView {
                 }
                 truePaths.append(Path(path: truePath))
             }
-            self?.drawPaths(paths: truePaths)
+            self?.drawPaths(paths: truePaths, color: UIColor.orange)
         }
         
     }
@@ -64,21 +63,15 @@ class DrawView:UIImageView {
         }
     }
     
-    func drawLines(lines:[Line]) {
-        for line in lines {
-            self.drawLine(line: line, save: true)
-        }
-    }
-    
-    func drawPaths(paths:[Path]) {
+    func drawPaths(paths:[Path], color:UIColor) {
         DispatchQueue.main.async { [weak self] in
             for path in paths {
-                self?.drawPath(path: path)
+                self?.drawPath(path: path, color:color, save:false)
                 
             }
         }
     }
-    func drawPath(path:Path) {
+    func drawPath(path:Path, color:UIColor, save:Bool) {
         let size = self.frame.size
         let width = self.frame.width
         let height = self.frame.height
@@ -91,31 +84,11 @@ class DrawView:UIImageView {
                 context?.addLine(to: point)
             }
         }
-        self.paths.append(path)
-        context?.setLineWidth(CGFloat(DrawConstants.LINE_WIDTH))
-        context?.setStrokeColor(UIColor.green.cgColor)
-        context?.strokePath()
-        self.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-    }
-    
-    func drawLine(line:Line, save:Bool) {
-        let size = self.frame.size
-        let width = self.frame.width
-        let height = self.frame.height
-        UIGraphicsBeginImageContext(size)
-        self.image?.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
-        let context = UIGraphicsGetCurrentContext()
-        let startPoint = line.startPoint
-        let endPoint = line.endPoint
-        context?.move(to: startPoint)
-        context?.addLine(to: endPoint)
         if (save) {
-            lines.append(Line(startPoint: startPoint, endPoint: endPoint))
+            self.paths.append(path)
         }
-        print(lines.count)
         context?.setLineWidth(CGFloat(DrawConstants.LINE_WIDTH))
-        context?.setStrokeColor(UIColor.green.cgColor)
+        context?.setStrokeColor(color.cgColor)
         context?.strokePath()
         self.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -132,7 +105,7 @@ class DrawView:UIImageView {
             drawPathArray = [lastPoint, currentPoint]
             lastPoint = currentPoint
             let path = Path(path: drawPathArray)
-            drawPath(path: path)
+            drawPath(path: path, color:UIColor.green, save:true)
         }
     }
     
