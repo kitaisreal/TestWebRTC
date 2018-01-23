@@ -575,15 +575,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-vN-QvI" userLabel="Small Video" customClass="RTCEAGLVideoView">
-                                <rect key="frame" x="214" y="541" width="153" height="110"/>
+                                <rect key="frame" x="214" y="549" width="153" height="110"/>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="l9J-Uq-oCb"/>
                                     <constraint firstAttribute="width" constant="153" id="qio-4R-SbR"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXH-WS-0ce" userLabel="Bottom menu">
-                                <rect key="frame" x="0.0" y="659" width="375" height="64"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXH-WS-0ce" userLabel="Bottom menu">
+                                <rect key="frame" x="0.0" y="667" width="375" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QFI-KN-meM">
                                         <rect key="frame" x="8" y="8" width="230" height="20.5"/>
@@ -608,25 +608,9 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JH-LB-Hy1">
-                                        <rect key="frame" x="335" y="4" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="PvY-LQ-QmI"/>
-                                            <constraint firstAttribute="width" constant="32" id="u67-7f-yLt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="✕">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onAnnotationsCloseButtonTapped:" destination="FaI-Nt-Z9q" eventType="touchUpInside" id="vke-vs-TBt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="2JH-LB-Hy1" firstAttribute="top" secondItem="tXH-WS-0ce" secondAttribute="top" constant="4" id="Jkr-ec-0Li"/>
-                                    <constraint firstAttribute="trailing" secondItem="2JH-LB-Hy1" secondAttribute="trailing" constant="8" id="f1d-u0-ZfX"/>
                                     <constraint firstItem="QFI-KN-meM" firstAttribute="top" secondItem="tXH-WS-0ce" secondAttribute="top" constant="8" id="g2J-ub-Iue"/>
                                     <constraint firstItem="QFI-KN-meM" firstAttribute="leading" secondItem="tXH-WS-0ce" secondAttribute="leading" constant="8" id="jp1-sw-jpe"/>
                                     <constraint firstAttribute="height" constant="64" id="oiJ-mF-Zat"/>
@@ -646,7 +630,7 @@
                             <constraint firstItem="40r-le-tDa" firstAttribute="top" secondItem="Oc1-Es-Zbq" secondAttribute="top" id="SdM-eM-Zv0"/>
                             <constraint firstItem="40r-le-tDa" firstAttribute="leading" secondItem="HC3-Fb-vpf" secondAttribute="leading" id="hI7-sA-IUE"/>
                             <constraint firstItem="9Hz-Gh-b9f" firstAttribute="trailing" secondItem="HC3-Fb-vpf" secondAttribute="trailing" id="hfp-TY-kfj"/>
-                            <constraint firstItem="tXH-WS-0ce" firstAttribute="bottom" secondItem="HC3-Fb-vpf" secondAttribute="bottom" constant="56" id="lkn-lr-il2"/>
+                            <constraint firstItem="tXH-WS-0ce" firstAttribute="bottom" secondItem="HC3-Fb-vpf" secondAttribute="bottom" constant="64" id="lkn-lr-il2"/>
                             <constraint firstItem="9Hz-Gh-b9f" firstAttribute="top" secondItem="40r-le-tDa" secondAttribute="bottom" id="rkc-tT-TjL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HC3-Fb-vpf"/>

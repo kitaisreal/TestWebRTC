@@ -453,6 +453,7 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
   [_peerConnection addStream:localStream];
 //    [self muteAudioIn];
 //    [self muteVideoIn];
+    [self swapCameraToBack];
     [self createDataChannel:kDrawingDataLabel];
   if (_isInitiator) {
     [self sendOffer];
