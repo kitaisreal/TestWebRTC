@@ -11,7 +11,7 @@ target 'AppRTCDemo' do
   pod 'ReactiveCocoa', '~> 7.0'
   pod 'libjingle_peerconnection'
   pod 'SocketRocket'
- 
+  pod 'Starscream', '~> 3.0.2'
   # Pods for AppRTCDemo
   
   target 'AppRTCDemoTests' do
