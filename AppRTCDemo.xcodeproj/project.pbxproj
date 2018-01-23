@@ -37,8 +37,14 @@
 		48843290200FB71D00EBA819 /* RTCICECandidate+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843285200FB71C00EBA819 /* RTCICECandidate+JSON.m */; };
 		48843291200FB71D00EBA819 /* ARDAppClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843287200FB71C00EBA819 /* ARDAppClient.m */; };
 		48843292200FB71D00EBA819 /* ARDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843288200FB71D00EBA819 /* ARDUtilities.m */; };
+		4888393720171EC60086269E /* DrawMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393620171EC60086269E /* DrawMessage.swift */; };
+		4888393920171F030086269E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393820171F030086269E /* Path.swift */; };
+		4888393B201724190086269E /* PathsConvertTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393A201724190086269E /* PathsConvertTestTests.swift */; };
 		489BCB2F2015CDA000933E44 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB2E2015CDA000933E44 /* VideoViewModel.swift */; };
 		489BCB312015CDAD00933E44 /* ViewModelActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB302015CDAD00933E44 /* ViewModelActions.swift */; };
+		48BD49FC20174AE30053FFDE /* SpecialistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD49FB20174AE30053FFDE /* SpecialistModel.swift */; };
+		48BD4A0020174C530053FFDE /* SpecialistsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD49FF20174C530053FFDE /* SpecialistsRepository.swift */; };
+		48BD4A0320174DAC0053FFDE /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD4A0220174DAC0053FFDE /* Authorization.swift */; };
 		48EBEE1E2016589400F36C3E /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EBEE1D2016589400F36C3E /* AnimationConstants.swift */; };
 		58037FD8A0AE09C45EA171B9 /* Pods_AppRTCDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA89ABA368AA6DC9924800 /* Pods_AppRTCDemoTests.framework */; };
 		947D3A0AFBCD513410DFC40F /* Pods_AppRTCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4FC53AC8479F039D7F36E8 /* Pods_AppRTCDemo.framework */; };
@@ -112,8 +118,14 @@
 		48843286200FB71C00EBA819 /* ARDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDUtilities.h; sourceTree = "<group>"; };
 		48843287200FB71C00EBA819 /* ARDAppClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDAppClient.m; sourceTree = "<group>"; };
 		48843288200FB71D00EBA819 /* ARDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDUtilities.m; sourceTree = "<group>"; };
+		4888393620171EC60086269E /* DrawMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawMessage.swift; sourceTree = "<group>"; };
+		4888393820171F030086269E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		4888393A201724190086269E /* PathsConvertTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsConvertTestTests.swift; sourceTree = "<group>"; };
 		489BCB2E2015CDA000933E44 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		489BCB302015CDAD00933E44 /* ViewModelActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelActions.swift; sourceTree = "<group>"; };
+		48BD49FB20174AE30053FFDE /* SpecialistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistModel.swift; sourceTree = "<group>"; };
+		48BD49FF20174C530053FFDE /* SpecialistsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsRepository.swift; sourceTree = "<group>"; };
+		48BD4A0220174DAC0053FFDE /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		48EBEE1D2016589400F36C3E /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		773D2014F14584A2496AE40D /* Pods_AppRTCDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppRTCDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D34F3CC836355E144EFFB5E /* Pods-AppRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTCDemo/Pods-AppRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				4823143F201109B90052292C /* Line.swift */,
+				4888393620171EC60086269E /* DrawMessage.swift */,
+				4888393820171F030086269E /* Path.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -257,6 +271,7 @@
 			children = (
 				4884305D200F737300EBA819 /* AppRTCDemoTests.swift */,
 				4884305F200F737300EBA819 /* Info.plist */,
+				4888393A201724190086269E /* PathsConvertTestTests.swift */,
 			);
 			path = AppRTCDemoTests;
 			sourceTree = "<group>";
@@ -314,6 +329,8 @@
 		48843294200FB82500EBA819 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				48BD4A0120174DA20053FFDE /* Authorization */,
+				48BD49FA20174AD60053FFDE /* Specialist */,
 				486097F62011D9A70081700F /* Constants */,
 				4823143E201109AB0052292C /* Drawing */,
 			);
@@ -327,6 +344,23 @@
 				489BCB302015CDAD00933E44 /* ViewModelActions.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48BD49FA20174AD60053FFDE /* Specialist */ = {
+			isa = PBXGroup;
+			children = (
+				48BD49FB20174AE30053FFDE /* SpecialistModel.swift */,
+				48BD49FF20174C530053FFDE /* SpecialistsRepository.swift */,
+			);
+			path = Specialist;
+			sourceTree = "<group>";
+		};
+		48BD4A0120174DA20053FFDE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				48BD4A0220174DAC0053FFDE /* Authorization.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		567E05578CA980B316C0729E /* Pods */ = {
@@ -657,10 +691,13 @@
 				481AF13A2015F04F0091273B /* VideoCallViewController.swift in Sources */,
 				480403252013586900A50C61 /* DrawView.swift in Sources */,
 				48843289200FB71D00EBA819 /* ARDMessageResponse.m in Sources */,
+				4888393920171F030086269E /* Path.swift in Sources */,
+				48BD49FC20174AE30053FFDE /* SpecialistModel.swift in Sources */,
 				489BCB312015CDAD00933E44 /* ViewModelActions.swift in Sources */,
 				4884328D200FB71D00EBA819 /* ARDSignalingMessage.m in Sources */,
 				48843290200FB71D00EBA819 /* RTCICECandidate+JSON.m in Sources */,
 				4823143D201104F10052292C /* DrawViewController.swift in Sources */,
+				4888393720171EC60086269E /* DrawMessage.swift in Sources */,
 				48231440201109B90052292C /* Line.swift in Sources */,
 				48843292200FB71D00EBA819 /* ARDUtilities.m in Sources */,
 				486097F82011D9B10081700F /* AppClientConstants.swift in Sources */,
@@ -672,6 +709,7 @@
 				48843049200F737300EBA819 /* AppDelegate.swift in Sources */,
 				48EBEE1E2016589400F36C3E /* AnimationConstants.swift in Sources */,
 				481AF1482015F7270091273B /* DesignViewController.swift in Sources */,
+				48BD4A0020174C530053FFDE /* SpecialistsRepository.swift in Sources */,
 				489BCB2F2015CDA000933E44 /* VideoViewModel.swift in Sources */,
 				4816E72B201222C20096DFEF /* DrawConstants.swift in Sources */,
 				4815A0E42015FD560095C9EF /* RoomNavigationViewController.swift in Sources */,
@@ -679,6 +717,7 @@
 				4884328F200FB71D00EBA819 /* RTCICEServer+JSON.m in Sources */,
 				4816E726201219FF0096DFEF /* VideoViewController.swift in Sources */,
 				4884328A200FB71D00EBA819 /* ARDWebSocketChannel.m in Sources */,
+				48BD4A0320174DAC0053FFDE /* Authorization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4888393B201724190086269E /* PathsConvertTestTests.swift in Sources */,
 				4884305E200F737300EBA819 /* AppRTCDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,7 +894,7 @@
 				INFOPLIST_FILE = AppRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTCDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppRTCDemo/AppRTCLib/AppRTCDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -875,7 +915,7 @@
 				INFOPLIST_FILE = AppRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTCDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Maksim-Kita.Maksim-Kita-AppRTC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppRTCDemo/AppRTCLib/AppRTCDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

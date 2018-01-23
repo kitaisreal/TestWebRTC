@@ -14,23 +14,89 @@ import ReactiveSwift
 class DrawView:UIImageView {
     
     var lines:[Line] = []
+    var paths:[Path] = []
+    private var oldPaths:[Path] = []
+    
     var drawBool:MutableProperty<Bool>?
     var drawColor:UIColor = UIColor.black
     private var lastPoint = CGPoint.zero
     private var swipped = false
     
-    
+    func getDrawMessage() -> DrawMessage {
+        let height = Double(self.frame.height)
+        let width = Double(self.frame.width)
+        if (oldPaths.count != paths.count) {
+            let pathsDifference = paths.difference(with: oldPaths)
+            oldPaths = self.paths.copy()
+            return DrawMessage(paths: pathsDifference, frameHeight: height, frameWidth: width)
+        }
+        return DrawMessage(paths: [], frameHeight: height, frameWidth: width)
+    }
+    func drawDrawMessage(drawMessage:DrawMessage) {
+        //TODO CHANGE POINTS TO YOUR FRAME HEIGHT FRAME WIDTH
+        DispatchQueue.main.async { [weak self] in
+            let paths = drawMessage.drawPaths
+            let height = drawMessage.frameHeight
+            let width = drawMessage.frameWidth
+            let frameHeight = (self?.frame.height)!
+            let frameWidth = (self?.frame.width)!
+            let scaleFactorY = height / Double(frameHeight)
+            let scaleFactorX = width / Double(frameWidth)
+            print("SCALE FACTOR X \(scaleFactorX)")
+            print("SCALE FACTOR Y \(scaleFactorY)")
+            var truePaths:[Path] = []
+            for path in paths {
+                var truePath:[CGPoint] = []
+                for point in path.path {
+                    let newPoint = CGPoint(x: Double(point.x) * scaleFactorX, y: Double(point.y) * scaleFactorY)
+                    truePath.append(newPoint)
+                }
+                truePaths.append(Path(path: truePath))
+            }
+            self?.drawPaths(paths: truePaths)
+        }
+        
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("DRAW VIEW TOUCHES BEGGAN")
         swipped = false
         if let touch = touches.first {
             lastPoint = touch.location(in: self)
         }
     }
+    
     func drawLines(lines:[Line]) {
         for line in lines {
             self.drawLine(line: line, save: true)
         }
+    }
+    
+    func drawPaths(paths:[Path]) {
+        DispatchQueue.main.async { [weak self] in
+            for path in paths {
+                self?.drawPath(path: path)
+                
+            }
+        }
+    }
+    func drawPath(path:Path) {
+        let size = self.frame.size
+        let width = self.frame.width
+        let height = self.frame.height
+        UIGraphicsBeginImageContext(size)
+        self.image?.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+        let context = UIGraphicsGetCurrentContext()
+        if path.path.first != nil {
+            context?.move(to: path.path[0])
+            for point in path.path {
+                context?.addLine(to: point)
+            }
+        }
+        self.paths.append(path)
+        context?.setLineWidth(CGFloat(DrawConstants.LINE_WIDTH))
+        context?.setStrokeColor(UIColor.green.cgColor)
+        context?.strokePath()
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
     
     func drawLine(line:Line, save:Bool) {
@@ -61,10 +127,12 @@ class DrawView:UIImageView {
         }
         swipped = true
         if let touch = touches.first {
+            var drawPathArray:[CGPoint] = []
             let currentPoint = touch.location(in: self)
-            let line = Line(startPoint: lastPoint, endPoint: currentPoint)
-            drawLine(line: line, save: true)
+            drawPathArray = [lastPoint, currentPoint]
             lastPoint = currentPoint
+            let path = Path(path: drawPathArray)
+            drawPath(path: path)
         }
     }
     

@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Duw-pj-sRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690.39999999999998" y="99.400299850074973"/>
+            <point key="canvasLocation" x="-2817" y="-483"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEf-e2-JaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-1574" y="-230"/>
         </scene>
         <!--Room Navigation View Controller-->
         <scene sceneID="i7e-Ki-gU0">
@@ -311,7 +311,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvs-f1-PlI">
-                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                <rect key="frame" x="164" y="286" width="40" height="30"/>
                                 <state key="normal" title="Room"/>
                                 <connections>
                                     <segue destination="FaI-Nt-Z9q" kind="show" id="G83-Wh-xps"/>
@@ -322,7 +322,7 @@
                         <constraints>
                             <constraint firstItem="unR-aH-VlE" firstAttribute="top" secondItem="Mvh-gL-1Of" secondAttribute="bottom" constant="220" id="EPW-P0-82o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="unR-aH-VlE" secondAttribute="trailing" constant="16" id="Hkb-GP-tEZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vvs-f1-PlI" secondAttribute="trailing" constant="149" id="KSB-Mz-jLS"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Vvs-f1-PlI" secondAttribute="trailing" id="KSB-Mz-jLS"/>
                             <constraint firstItem="Vvs-f1-PlI" firstAttribute="top" secondItem="unR-aH-VlE" secondAttribute="bottom" constant="16" id="O0w-7L-IEI"/>
                             <constraint firstItem="unR-aH-VlE" firstAttribute="leading" secondItem="Koo-aM-8F7" secondAttribute="leadingMargin" constant="16" id="QUf-pl-wYw"/>
                             <constraint firstItem="Vvs-f1-PlI" firstAttribute="leading" secondItem="Koo-aM-8F7" secondAttribute="leadingMargin" constant="148" id="aFf-rt-TY1"/>
@@ -567,11 +567,10 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hz-Gh-b9f" userLabel="Big video" customClass="RTCEAGLVideoView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65H-k4-ATY" customClass="DrawView" customModule="AppRTCDemo" customModuleProvider="target">
-                                <rect key="frame" x="10" y="74" width="343" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65H-k4-ATY" customClass="DrawView" customModule="AppRTCDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-vN-QvI" userLabel="Small Video" customClass="RTCEAGLVideoView">
@@ -625,11 +624,15 @@
                             <constraint firstItem="tXH-WS-0ce" firstAttribute="trailing" secondItem="HC3-Fb-vpf" secondAttribute="trailing" id="8iH-bL-gon"/>
                             <constraint firstItem="40r-le-tDa" firstAttribute="trailing" secondItem="HC3-Fb-vpf" secondAttribute="trailing" id="9hQ-Zj-DP5"/>
                             <constraint firstItem="9Hz-Gh-b9f" firstAttribute="leading" secondItem="HC3-Fb-vpf" secondAttribute="leading" id="Ctk-61-7N6"/>
+                            <constraint firstItem="HC3-Fb-vpf" firstAttribute="trailing" secondItem="65H-k4-ATY" secondAttribute="trailing" id="H8l-XH-K1b"/>
                             <constraint firstItem="HC3-Fb-vpf" firstAttribute="trailing" secondItem="Gid-vN-QvI" secondAttribute="trailing" constant="8" id="N8K-Ln-wIi"/>
+                            <constraint firstAttribute="bottom" secondItem="65H-k4-ATY" secondAttribute="bottom" id="PZE-64-se7"/>
                             <constraint firstItem="tXH-WS-0ce" firstAttribute="top" secondItem="Gid-vN-QvI" secondAttribute="bottom" constant="8" id="S8P-5J-KVF"/>
                             <constraint firstItem="40r-le-tDa" firstAttribute="top" secondItem="Oc1-Es-Zbq" secondAttribute="top" id="SdM-eM-Zv0"/>
+                            <constraint firstItem="65H-k4-ATY" firstAttribute="leading" secondItem="HC3-Fb-vpf" secondAttribute="leading" id="XTN-Qt-Goj"/>
                             <constraint firstItem="40r-le-tDa" firstAttribute="leading" secondItem="HC3-Fb-vpf" secondAttribute="leading" id="hI7-sA-IUE"/>
                             <constraint firstItem="9Hz-Gh-b9f" firstAttribute="trailing" secondItem="HC3-Fb-vpf" secondAttribute="trailing" id="hfp-TY-kfj"/>
+                            <constraint firstItem="65H-k4-ATY" firstAttribute="top" secondItem="40r-le-tDa" secondAttribute="bottom" id="i3T-GR-yWE"/>
                             <constraint firstItem="tXH-WS-0ce" firstAttribute="bottom" secondItem="HC3-Fb-vpf" secondAttribute="bottom" constant="64" id="lkn-lr-il2"/>
                             <constraint firstItem="9Hz-Gh-b9f" firstAttribute="top" secondItem="40r-le-tDa" secondAttribute="bottom" id="rkc-tT-TjL"/>
                         </constraints>

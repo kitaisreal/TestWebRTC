@@ -34,8 +34,6 @@ class VideoCallViewController: UIViewController {
     
     @IBOutlet weak var bottomMenu: UIView!
     
-    private var remoteVideoTrack:RTCVideoTrack?
-    private var localVideoTrack:RTCVideoTrack?
     
     private var drawState:MutableProperty<Bool> = MutableProperty<Bool>(false)
     private var audioState:Bool = true
@@ -72,15 +70,14 @@ class VideoCallViewController: UIViewController {
         videoCallSignal.observeValues() { [weak self] value in
             switch (value) {
                 
-            case .sendLines:
-                print("")
+            case .sendDrawMessage:
+                print("SEND DRAW MESSAGE")
+                if let drawMessage = self?.drawView.getDrawMessage() {
+                    self?.videoViewModelObserver.send(value: VideoViewModelActions.sendDrawMessage(drawMessage))
+                }
             case .receiveLocalVideo(let localVideoTrack):
-                print("Receive local video")
-                self?.localVideoTrack = localVideoTrack
                 localVideoTrack.add(self?.localVideoView)
             case .receiveRemoteVideo(let remoteVideoTrack):
-                print("Receive remote video")
-                self?.remoteVideoTrack = remoteVideoTrack
                 remoteVideoTrack.add(self?.remoteVideoView)
             case .connected:
                 print("connected")
@@ -91,9 +88,12 @@ class VideoCallViewController: UIViewController {
                 self?.dismiss(animated: true, completion: nil)
             case .swapRenderViews:
                 print("swap render views")
+                //TODO
                 self?.swapRenderViews()
-            case .receiveLines(let lines):
-                print("receive lines")
+            case .receiveDrawMessage(let drawMessage):
+                
+                print("RECEIVE DRAW MESSAGE")
+                self?.drawView.drawDrawMessage(drawMessage: drawMessage)
             case .error(let error):
                 print("Receive error \(error)")
                self?.videoViewModelObserver.send(value: VideoViewModelActions.callBreak)
@@ -148,30 +148,33 @@ class VideoCallViewController: UIViewController {
                     self?.drawState.value = !drawStateValue
                 }
         }
-        swapRenderViewsButton.reactive
-            .controlEvents(.touchUpInside)
-            .observeValues() { [weak self] button in
-               self?.videoViewModelObserver.send(value: VideoViewModelActions.swapRenderViews)
-        }
+//        swapRenderViewsButton.reactive
+//            .controlEvents(.touchUpInside)
+//            .observeValues() { [weak self] button in
+//               self?.videoViewModelObserver.send(value: VideoViewModelActions.swapRenderViews)
+//        }
+        
         videoViewModel.connectToRoom(roomID: roomID)
+        
+        videoViewModelObserver.send(value: VideoViewModelActions.initTimer)
         
         initButtonColors()
     }
     //MARK - SWAP RENDER VIEWS
     private func swapRenderViews() {
         print("SWAP RENDER VIEWS FUNCTION SECOND STEP")
-        if (videoRenderState) {
-            remoteVideoTrack?.remove(remoteVideoView)
-            localVideoTrack?.remove(localVideoView)
-            remoteVideoTrack?.add(localVideoView)
-            localVideoTrack?.add(remoteVideoView)
-        } else {
-            remoteVideoTrack?.remove(localVideoView)
-            localVideoTrack?.remove(remoteVideoView)
-            remoteVideoTrack?.add(localVideoView)
-            localVideoTrack?.add(remoteVideoView)
-        }
-        videoRenderState = !videoRenderState
+//        if (videoRenderState) {
+//            remoteVideoTrack?.remove(remoteVideoView)
+//            localVideoTrack?.remove(localVideoView)
+//            remoteVideoTrack?.add(localVideoView)
+//            localVideoTrack?.add(remoteVideoView)
+//        } else {
+//            remoteVideoTrack?.remove(localVideoView)
+//            localVideoTrack?.remove(remoteVideoView)
+//            remoteVideoTrack?.add(localVideoView)
+//            localVideoTrack?.add(remoteVideoView)
+//        }
+//        videoRenderState = !videoRenderState
     }
     //MARK - BUTTON COLOR INIT
     private func initButtonColors() {

@@ -9,7 +9,7 @@
 import Foundation
 
 enum VideoCallViewActions {
-    case sendLines
+    case sendDrawMessage
     case receiveLocalVideo(RTCVideoTrack)
     case receiveRemoteVideo(RTCVideoTrack)
     case connected(Bool)
@@ -18,7 +18,7 @@ enum VideoCallViewActions {
     case swapRenderViews
 //    case receiveMessage(ARDDataMessage)
     //MAYBE NOT LINES
-    case receiveLines([Line])
+    case receiveDrawMessage(DrawMessage)
     case error(Error)
 }
 
@@ -32,6 +32,8 @@ enum VideoViewModelActions {
     case stopVideoTranslation
     case swapCamera
     case swapRenderViews
+    case initTimer
+//    case invalidateTimer
     //MAYBE NOT LINE
-    case sendLines([Line])
+    case sendDrawMessage(DrawMessage)
 }

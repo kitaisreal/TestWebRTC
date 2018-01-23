@@ -453,7 +453,8 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
   [_peerConnection addStream:localStream];
 //    [self muteAudioIn];
 //    [self muteVideoIn];
-    [self swapCameraToBack];
+//    [self swapCameraToBack];
+//    [self swapCameraToBack];
     [self createDataChannel:kDrawingDataLabel];
   if (_isInitiator) {
     [self sendOffer];
@@ -478,14 +479,10 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
 -(void) sendDataToDataChannel:(RTCDataBuffer *)dataBufferMessage toChannelWithLabel:(NSString *)label {
     NSLog(@"SEND DATA TO DATA CHANNEL WITH LABEL %@", label);
     RTCDataChannel* dataChannel;
-    NSString* dataString = @"String from obj c";
-    NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
-    RTCDataBuffer* dataBuffer = [[RTCDataBuffer alloc] initWithData:data isBinary:false];
     for (dataChannel in _dataChannels) {
         if ([dataChannel.label  isEqual: label]) {
             NSLog(@"SEND DATA FIND CHANNEL TO SEND DATA %@", label);
             [dataChannel sendData:dataBufferMessage];
-            [dataChannel sendData:dataBuffer];
         }
         break;
     }
@@ -924,6 +921,7 @@ static NSInteger kARDAppClientErrorInvalidRoom = -7;
 
 #pragma mark - dataChannelDelegate
 - (void)channel:(RTCDataChannel *)channel didReceiveMessageWithBuffer:(RTCDataBuffer *)buffer {
+    NSLog(@"DATA SEND BUG RECEIVE SOME BUFFER");
     if ([channel.label  isEqual: kDrawingDataLabel] ) {
         [self.dataMessageReceiver didReceiveDataMessage:buffer];
     }

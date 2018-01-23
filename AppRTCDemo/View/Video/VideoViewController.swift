@@ -30,10 +30,10 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appClient = ARDAppClient()
+        appClient = ARDAppClient(delegate: self)
         appClient?.dataMessageReceiver = self
         appClient?.serverHostUrl = AppClientConstants.HOST_URL
-        appClient?.delegate = self
+        
         self.delegate = self
         self.textField.delegate = self
         self.imageView = drawingImage
@@ -115,8 +115,9 @@ extension VideoViewController:ARDAppClientDelegate {
     func appClient(_ client: ARDAppClient!, didReceiveRemoteVideoTrack remoteVideoTrack: RTCVideoTrack!) {
         print("RECEIVE REMOTE VIDEO TRACK")
         
-        self.remoteVideoTrack = remoteVideoTrack
-        self.remoteVideoTrack?.add(remoteVideoView)
+//        self.remoteVideoTrack = remoteVideoTrack
+        remoteVideoTrack.add(remoteVideoView)
+//        self.remoteVideoTrack?.add(remoteVideoView)
     }
     
     func appClient(_ client: ARDAppClient!, didError error: Error!) {

@@ -23,5 +23,22 @@ extension Array where Element == Line {
             return (!secondArray.contains($0))
         }
     }
+}
+
+extension Array where Element == Path {
+    func copy() -> [Path] {
+        var buffer:[Path] = []
+        for path in self {
+            buffer.append(path)
+        }
+        return buffer
+    }
     
+    func difference(with secondArray:[Path]) -> [Path] {
+        let buffer = self.copy()
+        return buffer.filter() {
+            return (!secondArray.contains($0))
+        }
+
+    }
 }
