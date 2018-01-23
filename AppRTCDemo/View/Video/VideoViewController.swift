@@ -9,7 +9,16 @@
 import UIKit
 
 class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMessageDelegate {
-
+    func didReceiveDataMessage(_ buffer: RTCDataBuffer!) {
+        print("DID RECEIVE MESSAGE")
+        if (buffer.isBinary == false) {
+            guard let string = String(data:buffer.data, encoding:.utf8) else {
+                return
+            }
+            print(string)
+        }
+    }
+    
     var appClient:ARDAppClient?
     
     @IBOutlet weak var textField: UITextField!
@@ -24,6 +33,7 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
         appClient = ARDAppClient(delegate: self)
         appClient?.dataMessageReceiver = self
         appClient?.serverHostUrl = AppClientConstants.HOST_URL
+        
         self.delegate = self
         self.textField.delegate = self
         self.imageView = drawingImage
@@ -40,7 +50,8 @@ class VideoViewController: AbstractDrawVC,ARDDataMessageReceiverDelegate,DrawMes
     @IBAction func sendDataToChannel(_ sender: UIButton){
         let testStringData = String("TestStringData").data(using: .utf8)
         let rtcDataBuffer = RTCDataBuffer(data: testStringData, isBinary: false)
-        appClient?.sendData(toDataChannel: rtcDataBuffer, toChannelWithLabel: "messages")
+        print(kDrawingDataLabel)
+        appClient?.sendData(toDataChannel: rtcDataBuffer, toChannelWithLabel:kDrawingDataLabel )
     }
     
     @IBAction func startVideoTranslation(_ sender: UIButton) {
@@ -92,6 +103,7 @@ extension VideoViewController:ARDAppClientDelegate {
         case .connecting:
             print("APP CLIENT STATE CONNECTING")
         case .connected:
+            print("APP CLIENT INITIATOR \(appClient?.isInitiator())")
             print("APP CLIENT STATE CONNECTED")
         }
     }
@@ -103,8 +115,9 @@ extension VideoViewController:ARDAppClientDelegate {
     func appClient(_ client: ARDAppClient!, didReceiveRemoteVideoTrack remoteVideoTrack: RTCVideoTrack!) {
         print("RECEIVE REMOTE VIDEO TRACK")
         
-        self.remoteVideoTrack = remoteVideoTrack
-        self.remoteVideoTrack?.add(remoteVideoView)
+//        self.remoteVideoTrack = remoteVideoTrack
+        remoteVideoTrack.add(remoteVideoView)
+//        self.remoteVideoTrack?.add(remoteVideoView)
     }
     
     func appClient(_ client: ARDAppClient!, didError error: Error!) {

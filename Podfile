@@ -8,6 +8,7 @@ target 'AppRTCDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   inhibit_all_warnings!
   use_frameworks!
+  pod 'ReactiveCocoa', '~> 7.0'
   pod 'libjingle_peerconnection'
   pod 'SocketRocket'
  

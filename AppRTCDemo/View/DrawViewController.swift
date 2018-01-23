@@ -9,6 +9,10 @@
 import UIKit
 
 class DrawViewController: UIViewController,ARDDataMessageReceiverDelegate {
+    func didReceiveDataMessage(_ buffer: RTCDataBuffer!) {
+        print()
+    }
+    
     
     var timer = Timer()
     
@@ -119,7 +123,6 @@ class DrawViewController: UIViewController,ARDDataMessageReceiverDelegate {
         context?.setLineWidth(1)
         context?.setStrokeColor(UIColor.green.cgColor)
         context?.strokePath()
-        
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }

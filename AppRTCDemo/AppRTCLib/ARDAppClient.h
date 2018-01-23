@@ -39,9 +39,10 @@ typedef NS_ENUM(NSInteger, ARDAppClientState) {
   // Connected to servers.
   kARDAppClientStateConnected,
 };
+static NSString *kDrawingDataLabel = @"drawing";
 
 @class ARDAppClient;
-@protocol ARDAppClientDelegate <NSObject>
+@protocol ARDAppClientDelegate
 
 - (void)appClient:(ARDAppClient *)client
     didChangeState:(ARDAppClientState)state;
@@ -66,7 +67,7 @@ typedef NS_ENUM(NSInteger, ARDAppClientState) {
 @property(nonatomic, strong) NSString *serverHostUrl;
 @property(nonatomic, weak) id<ARDDataMessageReceiverDelegate> dataMessageReceiver;
 - (instancetype)initWithDelegate:(id<ARDAppClientDelegate>)delegate;
-
+//- (instancetype)init;
 // Establishes a connection with the AppRTC servers for the given room id.
 // TODO(tkchin): provide available keys/values for options. This will be used
 // for call configurations such as overriding server choice, specifying codecs
@@ -90,10 +91,12 @@ typedef NS_ENUM(NSInteger, ARDAppClientState) {
 - (void)stopMediaTranslation;
 - (void)sendData:(NSData *)data;
 - (void)sendDataMessage:(ARDDataMessage *)ardDataMessage;
+- (void)sendDataToDataChannel:(RTCDataBuffer *)dataBufferMessage toChannelWithLabel:(NSString *)label;
+- (bool)isInitiator;
 // Swap camera functionality
 - (void)swapCameraToFront;
 - (void)swapCameraToBack;
-- (void)sendDataToDataChannel:(RTCDataBuffer *)dataBufferMessage toChannelWithLabel:(NSString *)label;
+
 // Disconnects from the AppRTC servers and any connected clients.
 - (void)disconnect;
 
