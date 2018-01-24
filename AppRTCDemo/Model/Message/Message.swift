@@ -41,3 +41,15 @@ class Message:Codable {
     }
 
 }
+
+extension Message {
+    
+    func toString() -> String? {
+        guard let messageData = try? JSONEncoder.init().encode(self) else {
+            return nil
+        }
+        let stringResult = String(data:messageData, encoding: .utf8)
+        return stringResult
+    }
+    
+}

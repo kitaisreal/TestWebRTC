@@ -13,8 +13,11 @@ struct MessageTypes {
     static let LOG_OUT = "log_out"
     static let CALL_OFFER = "call_offer"
     static let CALL_ANSWER = "call_answer"
+    static let LOG_IN_FOR = "log_in_for"
 }
-
+struct LogInForKeys {
+    static let LOG_IN_FOR = "log_in_for"
+}
 struct CallOfferKeys {
     static let CALL_OFFER_FOR = "call_offer_for"
 }

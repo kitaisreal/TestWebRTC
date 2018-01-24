@@ -25,5 +25,18 @@ class Authorization {
         return true
     }
     
-    
+    func getYourSpecialist() -> SpecialistModel? {
+        return yourSpecialist
+    }
+    func getSpecialists() -> [SpecialistModel] {
+        let specialists = specialistsRepository.getSpecialists()
+        var specialistsToReturn:[SpecialistModel] = []
+        for i in specialists {
+            if (i.id == yourSpecialist?.id) {
+                continue
+            }
+            specialistsToReturn.append(i)
+        }
+        return specialistsToReturn
+    }
 }

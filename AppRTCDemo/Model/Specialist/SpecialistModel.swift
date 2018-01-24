@@ -25,3 +25,16 @@ class SpecialistModel {
         self.password = password
     }
 }
+
+extension Array where Element == SpecialistModel {
+    func getIndex(id:String) -> Int? {
+        var getIndex:Int? = nil
+        for (index,specialist) in self.enumerated() {
+            if (specialist.id == id) {
+                getIndex = index
+                return getIndex
+            }
+        }
+        return getIndex
+    }
+}

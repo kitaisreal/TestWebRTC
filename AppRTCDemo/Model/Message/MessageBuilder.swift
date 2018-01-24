@@ -30,4 +30,10 @@ class MessageBuilder {
         return Message(idFrom: id, data: data, messageType: MessageTypes.CALL_ANSWER)
     }
     
+    func buildLogInForMessage(id:String, for secondId:String) -> Message {
+        var data:[String:String] = [:]
+        data.updateValue(secondId, forKey: LogInForKeys.LOG_IN_FOR)
+        return Message(idFrom: id, data: data, messageType: MessageTypes.LOG_IN_FOR)
+    }
+    
 }

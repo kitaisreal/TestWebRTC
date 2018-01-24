@@ -24,7 +24,14 @@ extension Array where Element == Line {
         }
     }
 }
-
+class Utils {
+    static func generateRandomId() -> String {
+        return String(Utils.randomInt(min: 1000000, max: 100000000))
+    }
+    static func randomInt(min: Int, max:Int) -> Int {
+        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    }
+}
 extension Array where Element == Path {
     func copy() -> [Path] {
         var buffer:[Path] = []
