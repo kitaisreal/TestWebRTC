@@ -47,7 +47,7 @@ class SpecialistsTableViewController: UITableViewController,SpecialistsViewModel
             switch (value) {
                 
             case .log_in(let id):
-                print("RECEIVE VIEW LOG IN MESSAGE FOR ID \(id)")
+//                print("RECEIVE VIEW LOG IN MESSAGE FOR ID \(id)")
                 guard let index = self?.specialists.getIndex(id: id),
                     let cell = self?.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SpecialistTableViewCell else {
                     break
@@ -55,7 +55,7 @@ class SpecialistsTableViewController: UITableViewController,SpecialistsViewModel
                 cell.setAvailableStatus()
                 break
             case .log_out(let id):
-                print("RECEIVE VIEW LOG OUT MESSAGE FOR ID \(id)")
+//                print("RECEIVE VIEW LOG OUT MESSAGE FOR ID \(id)")
                 guard let index = self?.specialists.getIndex(id: id),
                     let cell = self?.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? SpecialistTableViewCell else {
                         break
@@ -66,11 +66,11 @@ class SpecialistsTableViewController: UITableViewController,SpecialistsViewModel
                 guard let index = self?.specialists.getIndex(id: idFrom) else {
                         break
                 }
-                print("RECEIVE VIEW CALL OFFER MESSAGE WITH ID FROM \(idFrom)")
-                print("RECEIVE VIEW MAKE ANSWER FOR ID FROM \(idFrom)")
+//                print("RECEIVE VIEW CALL OFFER MESSAGE WITH ID FROM \(idFrom)")
+//                print("RECEIVE VIEW MAKE ANSWER FOR ID FROM \(idFrom)")
                 self?.specialistViewModelObserver.send(value: SpecialistsViewModelActions.callAnswer(idFrom))
             case .callAnswer(let roomId):
-                print("RECEIVE VIEW CALL ANSWER MESSAGE WITH ID \(roomId)")
+//                print("RECEIVE VIEW CALL ANSWER MESSAGE WITH ID \(roomId)")
                 self?.toRoom(roomID: roomId)
             }
         }
@@ -84,7 +84,6 @@ class SpecialistsTableViewController: UITableViewController,SpecialistsViewModel
             return
         }
         vc.roomID = roomID
-        
 //        vc.setRoomId(roomID: roomID)
         self.present(vc, animated: false, completion: nil)
     }

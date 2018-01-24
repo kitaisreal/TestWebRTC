@@ -14,6 +14,7 @@ class SpecialistTableViewCell: UITableViewCell {
     
     @IBOutlet weak var specialistName: UILabel!
     
+
     @IBOutlet weak var specialistCareer: UILabel!
     
     @IBOutlet weak var specialistCity: UILabel!

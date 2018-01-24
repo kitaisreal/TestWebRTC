@@ -39,8 +39,8 @@ class DrawView:UIImageView {
             let width = drawMessage.frameWidth
             let frameHeight = (self?.frame.height)!
             let frameWidth = (self?.frame.width)!
-            let scaleFactorY = height / Double(frameHeight)
-            let scaleFactorX = width / Double(frameWidth)
+            let scaleFactorY = Double(frameHeight) / height
+            let scaleFactorX =  Double(frameWidth) / width
             print("SCALE FACTOR X \(scaleFactorX)")
             print("SCALE FACTOR Y \(scaleFactorY)")
             var truePaths:[Path] = []
@@ -52,7 +52,8 @@ class DrawView:UIImageView {
                 }
                 truePaths.append(Path(path: truePath))
             }
-            self?.drawPaths(paths: truePaths, color: UIColor.orange)
+            let color = UIColor(red: 252/255, green: 186/255, blue: 40/255, alpha: 1.0)
+            self?.drawPaths(paths: truePaths, color: color)
         }
         
     }

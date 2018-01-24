@@ -39,6 +39,7 @@
 		4888393720171EC60086269E /* DrawMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393620171EC60086269E /* DrawMessage.swift */; };
 		4888393920171F030086269E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393820171F030086269E /* Path.swift */; };
 		4888393B201724190086269E /* PathsConvertTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888393A201724190086269E /* PathsConvertTestTests.swift */; };
+		488E393E2018A766007B1A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E393C2018A766007B1A5E /* LaunchScreen.storyboard */; };
 		489BCB2F2015CDA000933E44 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB2E2015CDA000933E44 /* VideoViewModel.swift */; };
 		489BCB312015CDAD00933E44 /* VideoActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489BCB302015CDAD00933E44 /* VideoActions.swift */; };
 		48B3E874201781390085EDD2 /* SpecialistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3E873201781390085EDD2 /* SpecialistsViewModel.swift */; };
@@ -53,7 +54,6 @@
 		48B3E88B2017A0F20085EDD2 /* SpecialistsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3E88A2017A0F20085EDD2 /* SpecialistsActions.swift */; };
 		48B3E88D2017A1D50085EDD2 /* SpecialistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3E88C2017A1D50085EDD2 /* SpecialistsTableViewController.swift */; };
 		48B3E88F2017A1E80085EDD2 /* SpecialistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3E88E2017A1E80085EDD2 /* SpecialistTableViewCell.swift */; };
-		48B3E8912017A6AD0085EDD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48B3E8902017A6AC0085EDD2 /* LaunchScreen.storyboard */; };
 		48B3E8962017C0440085EDD2 /* TestRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3E8952017C0440085EDD2 /* TestRoomViewController.swift */; };
 		48BD49FC20174AE30053FFDE /* SpecialistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD49FB20174AE30053FFDE /* SpecialistModel.swift */; };
 		48BD4A0020174C530053FFDE /* SpecialistsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD49FF20174C530053FFDE /* SpecialistsRepository.swift */; };
@@ -99,7 +99,7 @@
 		4823143F201109B90052292C /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		486097F72011D9B10081700F /* AppClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClientConstants.swift; sourceTree = "<group>"; };
 		487637F32011FF5D00FDFA17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		48843045200F737300EBA819 /* AppRTCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppRTCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48843045200F737300EBA819 /* Fluke Assist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fluke Assist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48843048200F737300EBA819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4884304A200F737300EBA819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4884304D200F737300EBA819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 		4888393620171EC60086269E /* DrawMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawMessage.swift; sourceTree = "<group>"; };
 		4888393820171F030086269E /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		4888393A201724190086269E /* PathsConvertTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathsConvertTestTests.swift; sourceTree = "<group>"; };
+		488E393D2018A766007B1A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		489BCB2E2015CDA000933E44 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		489BCB302015CDAD00933E44 /* VideoActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoActions.swift; sourceTree = "<group>"; };
 		48B3E873201781390085EDD2 /* SpecialistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsViewModel.swift; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		48B3E88A2017A0F20085EDD2 /* SpecialistsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsActions.swift; sourceTree = "<group>"; };
 		48B3E88C2017A1D50085EDD2 /* SpecialistsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsTableViewController.swift; sourceTree = "<group>"; };
 		48B3E88E2017A1E80085EDD2 /* SpecialistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistTableViewCell.swift; sourceTree = "<group>"; };
-		48B3E8902017A6AC0085EDD2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48B3E8952017C0440085EDD2 /* TestRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoomViewController.swift; sourceTree = "<group>"; };
 		48BD49FB20174AE30053FFDE /* SpecialistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistModel.swift; sourceTree = "<group>"; };
 		48BD49FF20174C530053FFDE /* SpecialistsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistsRepository.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		48843046200F737300EBA819 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48843045200F737300EBA819 /* AppRTCDemo.app */,
+				48843045200F737300EBA819 /* Fluke Assist.app */,
 				48843059200F737300EBA819 /* AppRTCDemoTests.xctest */,
 				48843064200F737300EBA819 /* AppRTCDemoUITests.xctest */,
 			);
@@ -286,7 +286,7 @@
 				48843048200F737300EBA819 /* AppDelegate.swift */,
 				4884304A200F737300EBA819 /* ViewController.swift */,
 				4884304C200F737300EBA819 /* Main.storyboard */,
-				48B3E8902017A6AC0085EDD2 /* LaunchScreen.storyboard */,
+				488E393C2018A766007B1A5E /* LaunchScreen.storyboard */,
 				481AF1452015F47D0091273B /* Assets.xcassets */,
 				48843054200F737300EBA819 /* Info.plist */,
 				481AF1472015F7270091273B /* DesignViewController.swift */,
@@ -495,9 +495,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48843044200F737300EBA819 /* AppRTCDemo */ = {
+		48843044200F737300EBA819 /* Fluke Assist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4884306D200F737300EBA819 /* Build configuration list for PBXNativeTarget "AppRTCDemo" */;
+			buildConfigurationList = 4884306D200F737300EBA819 /* Build configuration list for PBXNativeTarget "Fluke Assist" */;
 			buildPhases = (
 				FC40E05866E6B3CBE8CBE4B9 /* [CP] Check Pods Manifest.lock */,
 				48843041200F737300EBA819 /* Sources */,
@@ -510,9 +510,9 @@
 			);
 			dependencies = (
 			);
-			name = AppRTCDemo;
+			name = "Fluke Assist";
 			productName = AppRTCDemo;
-			productReference = 48843045200F737300EBA819 /* AppRTCDemo.app */;
+			productReference = 48843045200F737300EBA819 /* Fluke Assist.app */;
 			productType = "com.apple.product-type.application";
 		};
 		48843058200F737300EBA819 /* AppRTCDemoTests */ = {
@@ -597,7 +597,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48843044200F737300EBA819 /* AppRTCDemo */,
+				48843044200F737300EBA819 /* Fluke Assist */,
 				48843058200F737300EBA819 /* AppRTCDemoTests */,
 				48843063200F737300EBA819 /* AppRTCDemoUITests */,
 			);
@@ -609,7 +609,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B3E8912017A6AD0085EDD2 /* LaunchScreen.storyboard in Resources */,
+				488E393E2018A766007B1A5E /* LaunchScreen.storyboard in Resources */,
 				481AF1462015F6BE0091273B /* Assets.xcassets in Resources */,
 				4884304E200F737300EBA819 /* Main.storyboard in Resources */,
 			);
@@ -865,12 +865,12 @@
 /* Begin PBXTargetDependency section */
 		4884305B200F737300EBA819 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 48843044200F737300EBA819 /* AppRTCDemo */;
+			target = 48843044200F737300EBA819 /* Fluke Assist */;
 			targetProxy = 4884305A200F737300EBA819 /* PBXContainerItemProxy */;
 		};
 		48843066200F737300EBA819 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 48843044200F737300EBA819 /* AppRTCDemo */;
+			target = 48843044200F737300EBA819 /* Fluke Assist */;
 			targetProxy = 48843065200F737300EBA819 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -882,6 +882,14 @@
 				4884304D200F737300EBA819 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		488E393C2018A766007B1A5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				488E393D2018A766007B1A5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1119,7 +1127,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4884306D200F737300EBA819 /* Build configuration list for PBXNativeTarget "AppRTCDemo" */ = {
+		4884306D200F737300EBA819 /* Build configuration list for PBXNativeTarget "Fluke Assist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4884306E200F737300EBA819 /* Debug */,

@@ -34,6 +34,8 @@ class VideoCallViewController: UIViewController {
     
     @IBOutlet weak var bottomMenu: UIView!
     
+    @IBOutlet weak var withDialogLabel: UILabel!
+    var withDialogName:String?
     
     private var drawState:MutableProperty<Bool> = MutableProperty<Bool>(false)
     private var audioState:Bool = true
